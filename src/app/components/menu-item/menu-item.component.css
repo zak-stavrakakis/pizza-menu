@@ -1,0 +1,121 @@
+.parent-container {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+
+.sizes-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  gap: 1rem;
+}
+
+.size-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.custom-checkbox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: sans-serif;
+  user-select: none;
+}
+
+.custom-checkbox input {
+  display: none;
+}
+
+.custom-checkbox .checkmark {
+  width: 24px;
+  height: 24px;
+  background-color: #7da5be;
+  border-radius: 4px;
+  display: inline-block;
+  position: relative;
+  margin-bottom: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.custom-checkbox input:checked + .checkmark::after {
+  content: "";
+  position: absolute;
+  left: 7px;
+  top: 3px;
+  width: 6px;
+  height: 12px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.revert-container {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.revert-button {
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: #fff;
+  border: 1px solid #259;
+}
+.revert-button:hover {
+  background-color: #ddd;
+}
+
+.price-input {
+  display: flex;
+  align-items: center;
+  border: 1px solid #a5c0d4;
+  border-radius: 4px;
+  overflow: hidden;
+  width: fit-content;
+  background-color: #e3f0f8;
+}
+
+.price-input .icon {
+  background-color: #7da5be;
+  color: white;
+  padding: 8px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.price-input input {
+  border: none;
+  padding: 8px 10px;
+  width: 80px;
+  outline: none;
+  background-color: white;
+  color: #333;
+}
+
+.circle-icon-button {
+  width: 40px;
+  height: 40px;
+  border: 2px solid #7da5be;
+  border-radius: 50%;
+  background-color: white;
+  color: #7da5be;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.circle-icon-button:hover {
+  background-color: #7da5be;
+  color: white;
+}

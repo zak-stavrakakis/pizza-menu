@@ -1,0 +1,26 @@
+<div [ngClass]="{ 'card-open': isOpen, 'card-closed': !isOpen }">
+  <button
+    [ngClass]="{
+      'toggle-button-open': isOpen,
+      'toggle-button-closed': !isOpen
+    }"
+    (click)="handleToggle()"
+  >
+    <span
+      class="icon"
+      [ngStyle]="{
+        transform: !isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+        display: 'inline-block',
+        transition: 'transform 0.3s'
+      }"
+    >
+      <img [src]="expandMoreIcon" width="15px" alt="expand more" />
+    </span>
+    {{ title }}
+  </button>
+  <div class="card-content" *ngIf="isOpen">
+    <div class="card-content-inner">
+      <ng-content></ng-content>
+    </div>
+  </div>
+</div>

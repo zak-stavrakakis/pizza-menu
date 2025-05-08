@@ -1,0 +1,45 @@
+<div class="parent-container">
+  <div class="sizes-container">
+    <div *ngFor="let price of prices" class="size-option">
+      <label class="custom-checkbox">
+        <input
+          type="checkbox"
+          (ngModelChange)="onPriceChecked($event, price.sizeId)"
+          [(ngModel)]="price.isSelected"
+        />
+        <span class="checkmark"></span>
+        <span class="label" style="margin-bottom: 8px">{{
+          price.sizeName
+        }}</span>
+      </label>
+      <div class="price-input">
+        <span class="icon"><i class="fas fa-dollar-sign"></i></span>
+        <input
+          *ngIf="price.isSelected; else zeroInput"
+          [disabled]="!price.isSelected"
+          type="number"
+          step="0.01"
+          [(ngModel)]="price.price"
+          style="width: 100%"
+          placeholder="Price"
+          (ngModelChange)="onPriceChange($event, price.sizeId)"
+        />
+        <ng-template #zeroInput>
+          <input
+            disabled
+            type="number"
+            step="0.01"
+            style="width: 100%"
+            placeholder="Price"
+            value="0.00"
+          />
+        </ng-template>
+      </div>
+    </div>
+  </div>
+  <div class="revert-container" *ngIf="showUndo">
+    <button class="circle-icon-button" (click)="onRevertItem()">
+      <i class="fas fa-rotate-left"></i>
+    </button>
+  </div>
+</div>

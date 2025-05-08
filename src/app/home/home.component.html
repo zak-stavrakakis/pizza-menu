@@ -1,0 +1,8 @@
+<div class="container">
+  <div *ngFor="let item of items; let i = index">
+    <app-accordion [title]="item.name" [isOpen]="item.itemId === activeItemId"
+      (onToggle)="toggleCollapse($event,item.itemId)">
+      <app-menu-item [item]="item" [prices]="itemToPricesMap[item.itemId]"></app-menu-item>
+    </app-accordion>
+  </div>
+</div>
